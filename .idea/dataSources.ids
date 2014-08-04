@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails LadiesPowerGdansk: development" uuid="28fcdbc9-2b2c-4562-83aa-e1cd1c2b61c5">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails LadiesPowerGdansk: test" uuid="4b4c085d-455f-4631-a034-cb846779f8b0">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

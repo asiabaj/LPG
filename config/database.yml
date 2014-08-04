@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: LadiesPowerGdansk_development
+  pool: 5
+  username: asiabaj
+  password: 
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: LadiesPowerGdansk_test
+  pool: 5
+  username: asiabaj
+  password:
+
+  production:
+    adapter: postgresql
+    encoding: unicode
+    database: LadiesPowerGdansk_production
+    pool: 5
+    username: asiabaj
+    password:
