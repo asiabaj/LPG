@@ -32,6 +32,7 @@ gem 'haml-rails'
 
 gem 'font-awesome-rails'
 
+gem 'rails_12factor', group: :production
 
 #gem 'therubyracer'
 #gem 'less-rails'
@@ -47,4 +48,3 @@ gem 'font-awesome-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-

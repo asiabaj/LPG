@@ -20,7 +20,6 @@ figcaption,
 figure,
 footer,
 header,
-hgroup,
 main,
 nav,
 section,
@@ -2402,7 +2401,6 @@ input[type="time"],
 input[type="datetime-local"],
 input[type="month"] {
   line-height: 34px;
-  line-height: 1.42857143 \0;
 }
 input[type="date"].input-sm,
 input[type="time"].input-sm,
@@ -5991,7 +5989,7 @@ button.close {
           transform: translate3d(0, 0, 0);
 }
 @-ms-viewport {
-  width: device-width;
+  /* width: device-width; */
 }
 .visible-xs,
 .visible-sm,
