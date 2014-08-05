@@ -1,15 +1,94 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
  *= require_tree .
  *= require_self
  */
+/***** LINKI ********/
+
+.own_title > a,
+.own_menu_button > a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.own_title > a:hover,
+.own_menu_button > a:hover{
+    color: #e5097f;
+    background-color: transparent;
+}
+a.own_button:hover{
+    color: #e5097f;
+    background-color: white;
+}
+
+/***** BLOKI ********/
+
+.own_navbar{
+    margin-top: 1%;
+    font-family: 'Niconne', cursive;
+    text-align: center;
+}
+
+.own_title{
+    margin-bottom: 1%;
+    line-height: 120%;
+    background-color: #7e71b1;
+    color: #fff;
+    font-size: 5.5em;
+}
+
+.own_menu_button{
+    font-size: 3em;
+    line-height: 150%;
+    background-color: #7e71b1;
+    color: #fff;
+    margin-bottom: 1%;
+}
+
+.own_content{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    /* font-family */
+    text-align: left;
+    background-color: #7e71b1;
+    color: #fff;
+    font-size: 1em;
+}
+
+.own_content.jumbotron {
+    border-radius: 0px;
+}
+
+.own_button{
+    background-color: #fff;
+    color: #7e71b1;
+    border-radius: 0px;
+}
+
+/****** EKRANY ******/
+
+/* xs */
+@media (max-width: 767px){
+    .own_logo{
+        display: none;
+    }
+    .own_title{
+        font-size: 2.5em;
+    }
+    .own_menu_button{
+        font-size: 2.5em;
+        line-height: 110%;
+    }
+}
+
+/* sm */
+@media (min-width:768px) and (max-width: 991px){
+    .own_title{
+        font-size: 4em;
+    }
+    .own_menu_button{
+        font-size: 2em;
+        line-height: 140%;
+    }
+}
+
+

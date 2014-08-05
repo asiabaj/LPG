@@ -7,16 +7,17 @@
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %link{href: "//fonts.googleapis.com/css?family=Niconne&subset=latin-ext", rel: 'stylesheet' }
     %link{href: "//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", rel: "stylesheet"}
     = csrf_meta_tags
   %body
     .container
-      .row
+      .row.own_navbar
         =render 'layouts/partials/navbar'
       .row
         = yield
     %footer
-      .row
+      .row.own_content
         .col-lg-12
           %ul.list-unstyled
             %li.pull-right
