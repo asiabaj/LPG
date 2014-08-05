@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Day:
+  = @training.day
+%p
+  %b Duration:
+  = @training.duration
+%p
+  %b Team:
+  = @training.team_id
+
+= link_to 'Edit', edit_training_path(@training)
+\|
+= link_to 'Back', trainings_path

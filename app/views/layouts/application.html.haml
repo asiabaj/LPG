@@ -15,12 +15,11 @@
       .row.own_navbar
         =render 'layouts/partials/navbar'
       .row
-        = yield
-    %footer
-      .row.own_content
-        .col-lg-12
-          %ul.list-unstyled
-            %li.pull-right
-              %a{href: "#top"} Back to top
-          %p
-            Made by Apka Team
+        .col-xs-12.col-sm-12.col-lg-10
+          .col-sm-2.col-lg-2
+            .own_content
+              tralalala
+          .col-xs-12.col-sm-10
+            .own_content
+              .jumbotron
+                = yield

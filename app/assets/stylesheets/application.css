@@ -10,8 +10,8 @@
     text-decoration: none;
 }
 
-.own_title > a:hover,
-.own_menu_button > a:hover{
+.own_title > a:hover, a:focus,
+.own_menu_button > a:hover, a:focus{
     color: #e5097f;
     background-color: transparent;
 }
@@ -54,8 +54,9 @@ a.own_button:hover{
     font-size: 1em;
 }
 
-.own_content.jumbotron {
+.own_content > .jumbotron {
     border-radius: 0;
+    background-color: #7e71b1;
 }
 
 .own_button{

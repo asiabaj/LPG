@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :trainings
+
+  resources :coaches
+
+  resources :teams
+
+  resources :players
+
   resources :mains
 
   # The priority is based upon order of creation: first created -> highest priority.
