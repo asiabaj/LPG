@@ -6,4 +6,7 @@
   <data-source source="LOCAL" name="Rails LadiesPowerGdansk: test" uuid="4b4c085d-455f-4631-a034-cb846779f8b0">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source source="LOCAL" name="Rails LadiesPowerGdansk: production" uuid="28dcbb21-5f4b-46d1-93a3-b6b2b2a71e14">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>

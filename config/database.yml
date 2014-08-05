@@ -14,10 +14,10 @@ test:
   username: asiabaj
   password:
 
-  production:
-    adapter: postgresql
-    encoding: unicode
-    database: LadiesPowerGdansk_production
-    pool: 5
-    username: asiabaj
-    password:
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: LadiesPowerGdansk_production
+  pool: 5
+  username: asiabaj
+  password:
