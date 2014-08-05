@@ -55,13 +55,13 @@ a.own_button:hover{
 }
 
 .own_content.jumbotron {
-    border-radius: 0px;
+    border-radius: 0;
 }
 
 .own_button{
     background-color: #fff;
     color: #7e71b1;
-    border-radius: 0px;
+    border-radius: 0;
 }
 
 /****** EKRANY ******/
