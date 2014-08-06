@@ -1,17 +1,25 @@
-%h1 Listing coaches
+- @coaches.each do |coach|
+  %h1
+    = coach.name
+  %p
+    = coach.description
+  %p
+    .row
+      .col-xs-6.col-md-3
+        %a.thumbnail{href: "#"}
+          =image_tag 'logo_lpg.png', "data-src" => "holder.js/100%x180"
+      .col-xs-6.col-md-3
+        %a.thumbnail{href: "#"}
+          =image_tag 'logo_lpg.png', "data-src" => "holder.js/100%x180"
+      .col-xs-6.col-md-3
+        %a.thumbnail{href: "#"}
+          =image_tag 'logo_lpg.png', "data-src" => "holder.js/100%x180"
+      .col-xs-6.col-md-3
+        %a.thumbnail{href: "#"}
+          =image_tag 'logo_lpg.png', "data-src" => "holder.js/100%x180"
 
-%table
-  %tr
-    %th Name
-    %th Description
-    %th
-    %th
-    %th
-
-  - @coaches.each do |coach|
+  %table
     %tr
-      %td= coach.name
-      %td= coach.description
       %td= link_to 'Show', coach
       %td= link_to 'Edit', edit_coach_path(coach)
       %td= link_to 'Destroy', coach, :method => :delete, :data => { :confirm => 'Are you sure?' }
