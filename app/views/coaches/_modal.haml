@@ -1,0 +1,15 @@
+.modal.fade{id: whatabout, "tabindex" =>  "-1", "role" => "dialog", "aria-labelledby" => "myModalLabel", "aria-hidden" => "true"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"type" => "button", "data-dismiss" => "modal"}
+          %span{"aria-hidden" => "true"} x
+          %span.sr-only Close
+        %h4.modal-title
+          = title
+      .modal-body
+        %p
+          = content
+      .modal-footer
+        %button.btn.btn-default{"type" => "button", "data-dismiss" => "modal"}
+          Close

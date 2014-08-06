@@ -1,29 +1,22 @@
 - @coaches.each do |coach|
   %h1
-    = coach.name
-  %p
-    = coach.description
+    =link_to "#{coach.name}", coach
   %p
     .row
       .col-xs-6.col-md-3
-        %a.thumbnail{href: "#"}
-          =image_tag 'logo_lpg.png', "data-src" => "holder.js/100%x180"
+        %a.thumbnail{href: "#study-#{coach.id}", "data-toggle" => "modal"}
+          =image_tag "#{coach.id}-1.jpg", "data-src" => "holder.js/100%x180"
       .col-xs-6.col-md-3
-        %a.thumbnail{href: "#"}
-          =image_tag 'logo_lpg.png', "data-src" => "holder.js/100%x180"
+        %a.thumbnail{href: "#me-#{coach.id}", "data-toggle" => "modal"}
+          =image_tag "#{coach.id}-2.jpg", "data-src" => "holder.js/100%x180"
       .col-xs-6.col-md-3
-        %a.thumbnail{href: "#"}
-          =image_tag 'logo_lpg.png', "data-src" => "holder.js/100%x180"
+        %a.thumbnail{href: "#sport-#{coach.id}", "data-toggle" => "modal"}
+          =image_tag "#{coach.id}-3.jpg", "data-src" => "holder.js/100%x180"
       .col-xs-6.col-md-3
-        %a.thumbnail{href: "#"}
-          =image_tag 'logo_lpg.png', "data-src" => "holder.js/100%x180"
+        %a.thumbnail{href: "#passion-#{coach.id}", "data-toggle" => "modal"}
+          =image_tag "#{coach.id}-4.jpg", "data-src" => "holder.js/100%x180"
 
-  %table
-    %tr
-      %td= link_to 'Show', coach
-      %td= link_to 'Edit', edit_coach_path(coach)
-      %td= link_to 'Destroy', coach, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Coach', new_coach_path
+  = render 'modal', whatabout: "study-#{coach.id}", title: "Studia", content: coach.d_study
+  = render 'modal', whatabout:"me-#{coach.id}", title: "Jaka jestem?", content: coach.d_me
+  = render 'modal', whatabout: "sport-#{coach.id}", title: "Sport", content: coach.d_sport
+  = render 'modal', whatabout: "passion-#{coach.id}", title: "Pasja", content: coach.d_passion

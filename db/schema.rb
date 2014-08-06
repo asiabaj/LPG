@@ -18,12 +18,10 @@ ActiveRecord::Schema.define(version: 20140805214443) do
 
   create_table "coaches", force: true do |t|
     t.string   "name"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "mains", force: true do |t|
+    t.text     "d_study"
+    t.text     "d_me"
+    t.text     "d_sport"
+    t.text     "d_passion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
