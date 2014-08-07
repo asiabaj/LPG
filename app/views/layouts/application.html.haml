@@ -9,6 +9,9 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     %link{href: "//fonts.googleapis.com/css?family=Niconne&subset=latin-ext", rel: 'stylesheet' }
     %link{href: "//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", rel: "stylesheet"}
+    %link{href: "//fonts.googleapis.com/css?family=Open+Sans&subset=latin-ext", rel: "stylesheet"}
+    %link{href: "//fonts.googleapis.com/css?family=Noticia+Text&subset=latin-ext", rel: "stylesheet"}
+
     = csrf_meta_tags
   %body
     .container
@@ -18,7 +21,7 @@
         .col-xs-12.col-sm-12.col-lg-10
           .col-sm-2.col-lg-2
             .own_content
-              tralalala
+              = render 'layouts/partials/media'
           .col-xs-12.col-sm-10
             .own_content
               .jumbotron

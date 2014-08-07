@@ -1,12 +1,24 @@
 %p#notice= notice
 
-%p
-  %b Name:
+%h1
   = @coach.name
 %p
-  /%b Description:
-  /= @coach.description
+  %b Studia:
+  %p
+    = @coach.d_study
+%p
+  %b Na codzień:
+  %p
+    = @coach.d_me
+%p
+  %b Sport:
+  %p
+    = @coach.d_sport
+%p
+  %b Pasja:
+  %p
+    = @coach.d_passion
 
-= link_to 'Edit', edit_coach_path(@coach)
-\|
-= link_to 'Back', coaches_path
+/= link_to 'Edit', edit_coach_path(@coach)
+/\|
+/= link_to 'Back', coaches_path
