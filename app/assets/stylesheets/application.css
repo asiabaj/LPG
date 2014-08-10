@@ -4,21 +4,28 @@
  */
 /***** LINKI ********/
 
-.own_title > a,
+.media_nomobile > a:hover,
+.own_content > a:hover,
+.own_menu_button > .col-xs-6 > a,
 .own_menu_button > a{
+
     color: #fff;
     text-decoration: none;
 }
 
-.own_title > a:hover, a:focus,
 .own_menu_button > a:hover, a:focus{
-    color: #e5097f;
     background-color: transparent;
     text-decoration: none;
+    padding-left: 10%;
+    border-left: #e5097f solid ;
 }
 a.own_button:hover{
 
     background-color: white;
+}
+
+.media > a{
+    margin-top: 10%;
 }
 
 h1 > a:visited,
@@ -51,16 +58,15 @@ h1 > a:hover{
 }
 
 .own_menu_button{
-    font-size: 3em;
-    line-height: 150%;
+    font-size: 2.5em;
+    line-height: 170%;
     background-color: #7e71b1;
     color: #fff;
     margin-bottom: 1%;
+    font-family: 'Niconne', cursive;
 }
 
 .own_content{
-    margin-top: 1%;
-    margin-bottom: 1%;
     /* font-family */
     text-align: left;
     background-color: #7e71b1;
@@ -68,9 +74,14 @@ h1 > a:hover{
     font-size: 1em;
 }
 
+.own_margin{
+    padding-right:0;
+}
+
 .own_content > .jumbotron{
     border-radius    :0;
     background-color :#7e71b1;
+    text-align: center;
 }
 
 .own_button{
@@ -83,25 +94,49 @@ h1 > a:hover{
     color: #7e71b1;
     text-decoration: solid;
 }
+.media_nomobile{
+    padding: 10%;
+}
+
+.media_mobile{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.social_media{
+    background-color: #7e71b1;
+    color: #fff;
+    text-align: center;
+    margin-top: -7%;
+    padding: 3%;
+}
+
+
 
 /****** EKRANY ******/
 
 /* xs */
 @media (max-width: 767px){
-    .own_logo{
-        display: none;
-    }
     .own_title{
         font-size: 2.5em;
     }
     .own_menu_button{
-        font-size: 2.5em;
-        line-height: 110%;
+        margin-left: 10px;
+        font-size: 2em;
+        line-height: 120%;
+    }
+    .media_nomobile{
+        display: none;
+    }
+
+    .own_margin{
+        padding-left: 0;
+        padding-top: 2%;
     }
 }
 
 /* sm */
-@media (min-width:768px) and (max-width: 991px){
+@media (min-width:768px){
     .own_title{
         font-size: 4em;
     }
@@ -109,6 +144,11 @@ h1 > a:hover{
         font-size: 2em;
         line-height: 140%;
     }
+    .social_media,
+    .media_mobile{
+        display: none;
+    }
+
 }
 
 
