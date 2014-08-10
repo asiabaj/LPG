@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pitches
+
   resources :trainings
 
   resources :coaches
@@ -7,14 +9,14 @@ Rails.application.routes.draw do
 
   resources :players
 
-  resources :mains
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # FOR HEROKU
   root 'welcome#index'
+  get 'contact' => 'welcome#contact'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

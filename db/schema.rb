@@ -11,43 +11,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140805214443) do
+ActiveRecord::Schema.define(version: 20140810203001) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "coaches", force: true do |t|
-    t.string   "name"
-    t.text     "d_study"
-    t.text     "d_me"
-    t.text     "d_sport"
-    t.text     "d_passion"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table 'coaches', force: true do |t|
+    t.string 'name'
+    t.string 'd_study'
+    t.string 'd_me'
+    t.string 'd_sport'
+    t.string 'd_passion'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
 
-  create_table "players", force: true do |t|
-    t.string   "name"
-    t.integer  "age"
-    t.integer  "team_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table 'pitches', force: true do |t|
+    t.string 'address'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
 
-  create_table "teams", force: true do |t|
-    t.string   "name"
-    t.integer  "coach_id"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table 'players', force: true do |t|
+    t.string 'name'
+    t.integer 'age'
+    t.integer 'team_id'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
 
-  create_table "trainings", force: true do |t|
-    t.string   "day"
-    t.string   "duration"
-    t.integer  "team_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table 'teams', force: true do |t|
+    t.string 'name'
+    t.integer 'coach_id'
+    t.string 'age'
+    t.string 'district'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
+  end
+
+  create_table 'trainings', force: true do |t|
+    t.string 'day'
+    t.string 'duration'
+    t.integer 'team_id'
+    t.integer 'pitch_id'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
 
 end

@@ -4,16 +4,12 @@
  */
 /***** LINKI ********/
 
-.media_nomobile > a:hover,
-.own_content > a:hover,
-.own_menu_button > .col-xs-6 > a,
-.own_menu_button > a{
-
+a,
+a:hover{
     color: #fff;
     text-decoration: none;
 }
-
-.own_menu_button > a:hover, a:focus{
+.own_menu_button > a:hover{
     background-color: transparent;
     text-decoration: none;
     padding-left: 10%;
@@ -40,6 +36,9 @@ h1 > a:hover{
     background-color: transparent;
     text-decoration: none;
 }
+tr > td > a:hover{
+    color: #e5097f;
+}
 
 /***** BLOKI ********/
 
@@ -54,7 +53,6 @@ h1 > a:hover{
     line-height: 120%;
     background-color: #7e71b1;
     color: #fff;
-    font-size: 5.5em;
 }
 
 .own_menu_button{
@@ -67,7 +65,7 @@ h1 > a:hover{
 }
 
 .own_content{
-    /* font-family */
+    font-family: 'Open Sans';
     text-align: left;
     background-color: #7e71b1;
     color: #fff;
@@ -103,6 +101,11 @@ h1 > a:hover{
     padding-bottom: 5%;
 }
 
+.media_mobile > .own_menu_button > .col-xs-6 > a > img{
+    width: 100%;
+    max-width: 150px;
+}
+
 .social_media{
     background-color: #7e71b1;
     color: #fff;
@@ -110,8 +113,19 @@ h1 > a:hover{
     margin-top: -7%;
     padding: 3%;
 }
+td,
+th {
+    color: #fff;
+}
 
+dd,
+.jumbotron > p{
+    text-align: left;
+}
 
+.field{
+    color: #000;
+}
 
 /****** EKRANY ******/
 
@@ -138,7 +152,7 @@ h1 > a:hover{
 /* sm */
 @media (min-width:768px){
     .own_title{
-        font-size: 4em;
+        font-size: 5em;
     }
     .own_menu_button{
         font-size: 2em;
@@ -148,7 +162,6 @@ h1 > a:hover{
     .media_mobile{
         display: none;
     }
-
 }
 
 

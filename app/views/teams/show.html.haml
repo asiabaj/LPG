@@ -1,12 +1,51 @@
 %p#notice= notice
 
-%p
-  %b Name:
+%h2
   = @team.name
-%p
-  %b Coach:
-  = @team.coach_id
 
-= link_to 'Edit', edit_team_path(@team)
-\|
-= link_to 'Back', teams_path
+%p
+  Informacje o zespole
+
+  %table.table
+    %thead
+      %tr
+        %th Pani trener
+        %th Wiek zawodniczek
+    %tbody
+      %tr
+        %td= @team.coach.name
+        %td= @team.age
+
+%p
+  Treningi
+
+  %table.table
+    %thead
+      %tr
+        %th Dzień
+        %th Godziny
+        %th Miejsce
+    %tbody
+      - @trainings.each do |training|
+        - if training.team_id == @team.id
+          %tr
+            %td= training.day
+            %td= training.duration
+            %td= "#{@team.district}, #{training.pitch.address}"
+
+%p
+  Zawodniczki
+
+  %table.table
+    %thead
+      %tr
+        %th Imię i Nazwisko
+        %th Wiek
+    %tbody
+    - @players.each do |player|
+      - if player.team_id == @team.id
+        %tr
+          %td= player.name
+          %td= player.age
+
+  = link_to 'Powrót', teams_path

@@ -1,6 +1,42 @@
 %h1 Editing coach
 
-= render 'form'
+= form_for @coach do |f|
+  - if @coach.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@coach.errors.count, "error")} prohibited this coach from being saved:"
+      %ul
+        - @coach.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    .col-sm-4
+      = f.label 'Imię i nazwisko: ', class: 'control-label'
+    .col-sm-8
+      = f.text_field :name, class: 'form-control'
+  .form-group
+    .col-sm-4
+      = f.label 'O studiach', class: 'control-label'
+    .col-sm-8
+      = f.text_field :d_study, class: 'form-control'
+  .form-group
+    .col-sm-4
+      = f.label 'O sobie: ', class: 'control-label'
+    .col-sm-8
+      = f.text_area :d_me, class: 'form-control'
+  .form-group
+    .col-sm-4
+      = f.label 'O sporcie: ', class: 'control-label'
+    .col-sm-8
+      = f.text_area :d_sport, class: 'form-control'
+  .form-group
+    .col-sm-4
+      = f.label 'O pasji: ', class: 'control-label'
+    .col-sm-8
+      = f.text_area :d_passion, class: 'form-control'
+
+  .actions
+    = f.submit 'Save'
+
 
 = link_to 'Show', @coach
 

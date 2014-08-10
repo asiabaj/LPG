@@ -1,21 +1,21 @@
-%h1 Listing teams
+%h2 Zespoły
 
-%table
-  %tr
-    %th Name
-    %th Coach
-    %th
-    %th
-    %th
+.table-responsive
+  %table.table
+    %thead
+      %tr
+        %th Nazwa zespołu
+        %th Miejsce treningów
+        %th Wiek zawodniczek
+        %th Trener
+    %tbody
+    - @teams.each do |team|
+      %tr
+        %td= link_to "#{team.name}", team
+        %td= team.district
+        %td= team.age
+        %td= link_to "#{team.coach.name}", "/coaches/#{team.coach.id}"
 
-  - @teams.each do |team|
-    %tr
-      %td= team.name
-      %td= team.coach_id
-      %td= link_to 'Show', team
-      %td= link_to 'Edit', edit_team_path(team)
-      %td= link_to 'Destroy', team, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Team', new_team_path
+.media_mobile
+  %h6
+    przesuń tablelkę palcem, aby zobaczyć całość
