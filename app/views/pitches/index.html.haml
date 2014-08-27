@@ -2,12 +2,13 @@
 
 %table
   %tr
-    %th
-    %th
+    %th Adres
     %th
 
   - @pitches.each do |pitch|
     %tr
+      %td= pitch.address
+      %td= pitch.players.map {|k| k.name}.join(', ')
       %td= link_to 'Show', pitch
       %td= link_to 'Edit', edit_pitch_path(pitch)
       %td= link_to 'Destroy', pitch, :method => :delete, :data => { :confirm => 'Are you sure?' }

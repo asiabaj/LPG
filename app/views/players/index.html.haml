@@ -1,22 +1,22 @@
-%h1 Listing players
+%p
+  Zawodniczki
 
-%table
-  %tr
-    %th Name
-    %th Age
-    %th Team
-    %th
-    %th
-    %th
-
-  - @players.each do |player|
-    %tr
-      %td= player.name
-      %td= player.age
-      %td= player.team_id
-      %td= link_to 'Show', player
-      %td= link_to 'Edit', edit_player_path(player)
-      %td= link_to 'Destroy', player, :method => :delete, :data => { :confirm => 'Are you sure?' }
+%p
+  .table-responsive
+    %table.table
+      %thead
+        %tr
+          %th Imię
+          %th Nazwisko
+          %th Rok urodzenia
+          %th Email
+      %tbody
+      - @players.order(:age).each do |player|
+        %tr
+          %td= player.fname
+          %td= player.lname
+          %td= player.age
+          %td= player.email
 
 %br
 

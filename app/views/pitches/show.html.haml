@@ -1,5 +1,8 @@
 %p#notice= notice
-
+%p
+  = @pitch.address
+%p
+  = @pitch.players.map {|c| c.name}.join(', ')
 
 = link_to 'Edit', edit_pitch_path(@pitch)
 \|

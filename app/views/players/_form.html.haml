@@ -1,19 +1,62 @@
-= form_for @player do |f|
+= form_for @player, html: {class: 'form-horizontal'} do |f|
   - if @player.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@player.errors.count, "error")} prohibited this player from being saved:"
+      %h2= "#{pluralize(@player.errors.count, 'error')} prohibited this player from being saved:"
       %ul
         - @player.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :age
-    = f.number_field :age
-  .field
-    = f.label :team_id
-    = f.number_field :team_id
-  .actions
-    = f.submit 'Save'
+  .form-group
+    .col-sm-2
+    .col-sm-8
+      %h2
+        Zgłoszenie
+
+  = f.hidden_field :team_id, value: nil
+  = f.hidden_field "player[pitch_ids][]", value: nil
+
+  .form-group
+    = f.label 'Imię: ', class: 'col-sm-3 control-label'
+    .col-sm-8
+      = f.text_field :fname, class: 'form-control'
+  .form-group
+    = f.label 'Nazwisko: ', class: 'col-sm-3 control-label'
+    .col-sm-8
+      = f.text_field :lname, class: 'form-control'
+  .form-group
+    = f.label 'Email: ', class: 'col-sm-3 control-label'
+    .col-sm-8
+      = f.email_field :email, class: 'form-control'
+  .form-group
+    = f.label 'Rok urodzenia: ', class: 'col-sm-3 control-label'
+    .col-sm-8
+      = f.number_field :age, class: 'form-control', value: 2000
+  .form-group
+    .help-block.own
+      Aby powstał zespół musi zebrać się 15 dziewcząt w zbliżonym wieku oraz
+      właściciel obiektu (zazwyczaj szkoła) musi wyrazić zgodę na treningi.
+      Wobec tego najlepiej zaznaczyć boisko przy swojej szkole i wszystkie inne,
+      do których masz wygodny dojazd. Ta
+      = link_to 'mapa', 'https://mapsengine.google.com/map/edit?mid=zA3SOfG4HEgE.kfM4uK681IgQ'
+      pomoże Ci zdecydować, które boiska wybrać.
+  .col-sm-4
+    - for pitch in @pitches
+      - if pitch.ptype == 'orlik'
+        .text-left.checkbox
+          = check_box_tag "player[pitch_ids][]", pitch.id, @player.pitches.include?(pitch), class: 'checkbox-inline'
+          = pitch.ptype + ' - ' + pitch.address
+  .col-sm-4
+    - for pitch in @pitches
+      - if pitch.ptype == 'junior'
+        .text-left.checkbox
+          = check_box_tag "player[pitch_ids][]", pitch.id, @player.pitches.include?(pitch), class: 'checkbox-inline'
+          = pitch.ptype + ' - ' + pitch.address
+  .col-sm-4
+    - for pitch in @pitches
+      - if pitch.ptype == 'szkolne'
+        .text-left.checkbox
+          = check_box_tag "player[pitch_ids][]", pitch.id, @player.pitches.include?(pitch), class: 'checkbox-inline'
+          = pitch.ptype + ' - ' + pitch.address
+  .form-group
+    .col-sm-offset-2.col-sm-8
+      = f.submit 'Wyślij zgłoszenie! ', class: 'btn'

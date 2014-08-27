@@ -11,51 +11,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140810203001) do
+ActiveRecord::Schema.define(version: 20140827190640) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'coaches', force: true do |t|
-    t.string 'name'
-    t.string 'd_study'
-    t.string 'd_me'
-    t.string 'd_sport'
-    t.string 'd_passion'
-    t.datetime 'created_at'
-    t.datetime 'updated_at'
+  create_table "coaches", force: true do |t|
+    t.string   "name"
+    t.string   "d_study"
+    t.string   "d_me"
+    t.string   "d_sport"
+    t.string   "d_passion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
   end
 
-  create_table 'pitches', force: true do |t|
-    t.string 'address'
-    t.datetime 'created_at'
-    t.datetime 'updated_at'
+  add_index "coaches", ["email"], name: "index_coaches_on_email", unique: true, using: :btree
+  add_index "coaches", ["reset_password_token"], name: "index_coaches_on_reset_password_token", unique: true, using: :btree
+
+  create_table "pitches", force: true do |t|
+    t.string   "address"
+    t.string   "ptype"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table 'players', force: true do |t|
-    t.string 'name'
-    t.integer 'age'
-    t.integer 'team_id'
-    t.datetime 'created_at'
-    t.datetime 'updated_at'
+  create_table "pitches_players", id: false, force: true do |t|
+    t.integer "pitch_id"
+    t.integer "player_id"
   end
 
-  create_table 'teams', force: true do |t|
-    t.string 'name'
-    t.integer 'coach_id'
-    t.string 'age'
-    t.string 'district'
-    t.datetime 'created_at'
-    t.datetime 'updated_at'
+  create_table "players", force: true do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "email"
+    t.integer  "age"
+    t.integer  "team_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table 'trainings', force: true do |t|
-    t.string 'day'
-    t.string 'duration'
-    t.integer 'team_id'
-    t.integer 'pitch_id'
-    t.datetime 'created_at'
-    t.datetime 'updated_at'
+  create_table "teams", force: true do |t|
+    t.string   "name"
+    t.integer  "coach_id"
+    t.string   "age"
+    t.string   "district"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trainings", force: true do |t|
+    t.string   "day"
+    t.string   "duration"
+    t.integer  "team_id"
+    t.integer  "pitch_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

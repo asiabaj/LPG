@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  devise_for :coaches
+
+  resources :applications
+
   resources :pitches
 
   resources :trainings
@@ -16,7 +21,8 @@ Rails.application.routes.draw do
   # FOR HEROKU
   root 'welcome#index'
   get 'contact' => 'welcome#contact'
-
+  get 'login' => 'welcome#login'
+  get 'idea' => 'welcome#idea'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

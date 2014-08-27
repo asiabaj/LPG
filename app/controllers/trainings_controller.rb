@@ -2,27 +2,27 @@ class TrainingsController < ApplicationController
   before_action :set_training, only: [:show, :edit, :update, :destroy]
 
   # GET /trainings
-  # GET /trainings.json
+  # GET /trainings/1
+  # GET /trainings/new
+  # GET /trainings/1/edit
+  # POST /trainings         //create
+  # PATCH/PUT /trainings/1  //update
+  # DELETE /trainings/1
+
   def index
     @trainings = Training.all
   end
 
-  # GET /trainings/1
-  # GET /trainings/1.json
   def show
   end
 
-  # GET /trainings/new
   def new
     @training = Training.new
   end
 
-  # GET /trainings/1/edit
   def edit
   end
 
-  # POST /trainings
-  # POST /trainings.json
   def create
     @training = Training.new(training_params)
 
@@ -37,8 +37,6 @@ class TrainingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /trainings/1
-  # PATCH/PUT /trainings/1.json
   def update
     respond_to do |format|
       if @training.update(training_params)
@@ -51,8 +49,6 @@ class TrainingsController < ApplicationController
     end
   end
 
-  # DELETE /trainings/1
-  # DELETE /trainings/1.json
   def destroy
     @training.destroy
     respond_to do |format|
@@ -69,6 +65,6 @@ class TrainingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def training_params
-      params.require(:training).permit(:day, :duration, :team_id)
+      params.require(:training).permit(:day, :duration, :team_id, :pitch_id)
     end
 end

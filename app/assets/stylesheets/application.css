@@ -5,8 +5,10 @@
 /***** LINKI ********/
 
 a,
-a:hover{
+a:hover,
+a:visited{
     color: #fff;
+    background-color: transparent;
     text-decoration: none;
 }
 .own_menu_button > a:hover{
@@ -15,23 +17,31 @@ a:hover{
     padding-left: 10%;
     border-left: #e5097f solid ;
 }
-a.own_button:hover{
 
+a.own_button,
+a.own_button:visited{
     background-color: white;
+    color: #7e71b1;
+}
+
+a.btn:hover,
+a.own_button:hover{
+    background-color: white;
+    color: #e5097f;
 }
 
 .media > a{
     margin-top: 10%;
 }
 
-h1 > a:visited,
-h1 > a {
+h2 > a:visited,
+h2 > a {
     color: white;
     background-color: transparent;
     text-decoration: none;
 }
 
-h1 > a:hover{
+h2 > a:hover{
     color: #e5097f;
     background-color: transparent;
     text-decoration: none;
@@ -127,6 +137,15 @@ dd,
     color: #000;
 }
 
+.help-block.own{
+    color: #fff;
+}
+
+p.own,
+ul.own > li{
+    font-size: 1.2em;
+    line-height: 120%;
+}
 /****** EKRANY ******/
 
 /* xs */

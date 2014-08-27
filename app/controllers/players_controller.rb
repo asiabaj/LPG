@@ -1,28 +1,22 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
 
-  # GET /players
-  # GET /players.json
   def index
     @players = Player.all
   end
 
-  # GET /players/1
-  # GET /players/1.json
   def show
   end
 
-  # GET /players/new
   def new
     @player = Player.new
+    @pitches = Pitch.all
   end
 
-  # GET /players/1/edit
   def edit
+    @pitches = Pitch.all
   end
 
-  # POST /players
-  # POST /players.json
   def create
     @player = Player.new(player_params)
 
@@ -37,9 +31,8 @@ class PlayersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /players/1
-  # PATCH/PUT /players/1.json
   def update
+    params[:player][:pitch_ids] ||= []
     respond_to do |format|
       if @player.update(player_params)
         format.html { redirect_to @player, notice: 'Player was successfully updated.' }
@@ -51,8 +44,6 @@ class PlayersController < ApplicationController
     end
   end
 
-  # DELETE /players/1
-  # DELETE /players/1.json
   def destroy
     @player.destroy
     respond_to do |format|
@@ -69,6 +60,6 @@ class PlayersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
-      params.require(:player).permit(:name, :age, :team_id)
+      params.require(:player).permit(:fname, :lname, :email, :age, :team_id, :pitch_ids => [])
     end
 end

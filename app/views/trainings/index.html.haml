@@ -9,14 +9,14 @@
       %th Miejsce
     - @trainings.each do |training|
       %tr
+        %td= training.team.name
         %td= training.day
         %td= training.duration
-        %td= training.team.name
         %td= "#{training.team.district}, #{training.pitch.address}"
-        /%td= link_to 'Show', training
-        /%td= link_to 'Edit', edit_training_path(training)
-        /%td= link_to 'Destroy', training, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        -if coach_signed_in?
+          %td= link_to 'Edit', edit_training_path(training)
+          %td= link_to 'Destroy', training, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
-
-/= link_to 'New Training', new_training_path
+.media_mobile
+  %h6
+    przesuń tablelkę palcem, aby zobaczyć całość

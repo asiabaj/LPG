@@ -1,28 +1,22 @@
 class PitchesController < ApplicationController
   before_action :set_pitch, only: [:show, :edit, :update, :destroy]
 
-  # GET /pitches
-  # GET /pitches.json
   def index
     @pitches = Pitch.all
   end
 
-  # GET /pitches/1
-  # GET /pitches/1.json
   def show
   end
 
-  # GET /pitches/new
   def new
     @pitch = Pitch.new
+    @players = Player.all
   end
 
-  # GET /pitches/1/edit
   def edit
+    @players = Player.all
   end
 
-  # POST /pitches
-  # POST /pitches.json
   def create
     @pitch = Pitch.new(pitch_params)
 
@@ -37,8 +31,6 @@ class PitchesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /pitches/1
-  # PATCH/PUT /pitches/1.json
   def update
     respond_to do |format|
       if @pitch.update(pitch_params)
@@ -51,8 +43,6 @@ class PitchesController < ApplicationController
     end
   end
 
-  # DELETE /pitches/1
-  # DELETE /pitches/1.json
   def destroy
     @pitch.destroy
     respond_to do |format|
@@ -69,6 +59,6 @@ class PitchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pitch_params
-      params[:pitch]
+      params.require(:pitch).permit(:address, :player_ids => [])
     end
 end

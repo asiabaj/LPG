@@ -19,5 +19,10 @@
   %p
     = @coach.d_passion
 
+
+- if coach_signed_in?
+  %p
+    = link_to 'edytuj',  edit_coach_path(@coach)
+
 %p
   = link_to 'Powrót', coaches_path

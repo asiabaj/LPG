@@ -1,5 +1,9 @@
 %h1 New training
 
-= render 'form'
+-if coach_signed_in?
+  = render 'form'
+-else
+  %p
+    nie masz dostępu!
 
 = link_to 'Back', trainings_path
