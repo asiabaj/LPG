@@ -58,5 +58,13 @@
           = check_box_tag "player[pitch_ids][]", pitch.id, @player.pitches.include?(pitch), class: 'checkbox-inline'
           = pitch.ptype + ' - ' + pitch.address
   .form-group
+    = f.label 'Ile razy w tygodniu mogłabyś trenować?', class: 'col-sm-3 control-label'
+    .col-sm-8
+      = f.label :times, "1", value: 1
+      = f.radio_button :times, 1
+      = f.label :times, "2", value: 2
+      = f.radio_button :times, 2
+
+  .form-group
     .col-sm-offset-2.col-sm-8
       = f.submit 'Wyślij zgłoszenie! ', class: 'btn'

@@ -3,7 +3,7 @@
 %h2
   = @team.name
 
-%p
+%p.text-left
   Informacje o zespole
 
   %table.table
@@ -16,7 +16,7 @@
         %td= @team.coach.name
         %td= @team.age
 
-%p
+%p.text-left
   Treningi
 
   %table.table
@@ -33,7 +33,7 @@
             %td= training.duration
             %td= "#{@team.district}, #{training.pitch.address}"
 
-%p
+%p.text-left
   Zawodniczki
 
   %table.table
@@ -49,8 +49,6 @@
           %td= player.fname
           %td= player.lname
           %td= player.age
-
-  = link_to 'Powrót', teams_path
 
 -if coach_signed_in?
   = link_to 'edytuj', edit_team_path(@team)

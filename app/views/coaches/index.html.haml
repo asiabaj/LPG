@@ -1,22 +1,46 @@
 - @coaches.each do |coach|
   %h2
     =link_to "#{coach.name}", coach
-  %p
-    .row
-      .col-xs-6.col-md-3
-        %a.thumbnail{href: "#study-#{coach.id}", 'data-toggle' => 'modal'}
-          =image_tag "#{coach.id}-1.jpg", 'data-src' => 'holder.js/100%x180'
-      .col-xs-6.col-md-3
-        %a.thumbnail{href: "#me-#{coach.id}", 'data-toggle' => 'modal'}
-          =image_tag "#{coach.id}-2.jpg", 'data-src' => 'holder.js/100%x180'
-      .col-xs-6.col-md-3
-        %a.thumbnail{href: "#sport-#{coach.id}", 'data-toggle' => 'modal'}
-          =image_tag "#{coach.id}-3.jpg", 'data-src' => 'holder.js/100%x180'
-      .col-xs-6.col-md-3
-        %a.thumbnail{href: "#passion-#{coach.id}", 'data-toggle' => 'modal'}
-          =image_tag "#{coach.id}-4.jpg", 'data-src' => 'holder.js/100%x180'
 
-  = render 'modal', whatabout: "study-#{coach.id}", title: 'Studia', content: coach.d_study
-  = render 'modal', whatabout:"me-#{coach.id}", title: 'Jaka jestem?', content: coach.d_me
-  = render 'modal', whatabout: "sport-#{coach.id}", title: 'Sport', content: coach.d_sport
-  = render 'modal', whatabout: "passion-#{coach.id}", title: 'Pasja', content: coach.d_passion
+  .media_nomobile
+    %p
+      .row
+        .col-sm-3
+          %a.img-thumbnail{href: "#study-#{coach.id}", 'data-toggle' => 'modal'}
+            =image_tag "#{coach.id}-1.jpg", width: '180px'
+        .col-sm-3
+          %a.img-thumbnail{href: "#me-#{coach.id}", 'data-toggle' => 'modal'}
+            =image_tag "#{coach.id}-2.jpg", width: '180px'
+        .col-sm-3
+          %a.img-thumbnail{href: "#sport-#{coach.id}", 'data-toggle' => 'modal'}
+            =image_tag "#{coach.id}-3.jpg", width: '180px'
+        .col-sm-3
+          %a.img-thumbnail{href: "#passion-#{coach.id}", 'data-toggle' => 'modal'}
+            =image_tag "#{coach.id}-4.jpg", width: '180px'
+
+  .media_mobile
+    %p
+      .row
+        .col-xs-6
+          %a.img-thumbnail{href: "#study-#{coach.id}", 'data-toggle' => 'modal'}
+            =image_tag "#{coach.id}-1.jpg", width: '100%'
+        .col-xs-6
+          %a.img-thumbnail{href: "#me-#{coach.id}", 'data-toggle' => 'modal'}
+            =image_tag "#{coach.id}-2.jpg", width: '100%'
+        .col-xs-6
+          %a.img-thumbnail{href: "#sport-#{coach.id}", 'data-toggle' => 'modal'}
+            =image_tag "#{coach.id}-3.jpg", width: '100%'
+        .col-xs-6
+          %a.img-thumbnail{href: "#passion-#{coach.id}", 'data-toggle' => 'modal'}
+            =image_tag "#{coach.id}-4.jpg", width: '100%'
+
+
+  = render 'modal', whatabout: "study-1", title: 'Studia', content: 'Od dwóch lat studiuję Informatykę na Politechnice Gdańskiej. Jest trudno, ale ja lubię wyzwania :) Jeśli miałabym pracować w branży IT to chciałabym projektować aplikacje internetowe a w wolnych chwilach działać na rzecz ulepszenia internetu.'
+  = render 'modal', whatabout:"me-1", title: 'Jaka jestem?', content: 'Czasem się zastanawiam gdzie zostawiam więcej serca: na boisku czy w Bieszczadach. Wybieram rower zamiast autobusu i pociąg zamiast samochodu. Nie lubię jeść na mieście - mam ulubione pudełko na lunch i zawsze przygotowuję sobie jedzenie w domu. Staram się w życiu kierować chrześcijańskimi wartościami i nie szufladkować ludzi pod żadnym względem.'
+  = render 'modal', whatabout: "sport-1", title: 'Sport', content: 'Przygodę z piłką zaczynałam jako kilkuletnia dziewczynka na podwórku. W podstawówce i gimnazjum grałam w dziewczęcym klubie w Lechii Gdańsk i kadrze woj. pomorskiego. Kontuzja kolan zmusiła mnie do przerwania "kariery" na kilka lat. Dopiero na studiach wróciłam do uprawiania sportu - należę do żeńskiej drużyny futsalowej. Od roku trenuję dziewczęcy zespół przy Fregacie w Oliwie.'
+  = render 'modal', whatabout: "passion-1", title: 'Pasja', content: 'We wrześniu minie 9 lat odkąd jestem harcerką. Z jednej strony to około 300 sobót rozpoczynających się o 8 rano, a z drugiej to niezapomniane wspomnienia udanego dzieciństwa, pierwszych poważnych obowiązków i (od kilku lat) świadomej pracy wychowawczej. Od dwóch lat jestem instruktorką Związku Harcerstwa Rzeczpospolitej i prowadzę gromadę zuchenek "Królestwo Konwalii". To fantastyczna sprawa, kiedy możesz kształtować i obserwować proces, w którym dzieci uczą się, rozwijają swoje mocne strony i pracują nad tymi słabymi.'
+
+  = render 'modal', whatabout: "study-2", title: 'Studia', content: ''
+  = render 'modal', whatabout:"me-2", title: 'Jaka jestem?', content: ''
+  = render 'modal', whatabout: "sport-2", title: 'Sport', content: ''
+  = render 'modal', whatabout: "passion-2", title: 'Pasja', content: ''

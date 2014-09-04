@@ -1,0 +1,138 @@
+body{
+    background-color: #8BDB72;
+}
+
+.own_navbar{
+    font-family: 'Niconne', cursive;
+    text-align: center;
+    line-height: 130%;
+}
+
+.own_panel{
+	background-color: white;
+    line-height: 130%;
+	padding: 15px;
+	margin-top: 15px;
+    text-align: center;
+}
+
+.own_menu_button{
+    background-color: #ab3b93;
+    color: white;
+    font-family: 'Niconne', cursive;
+    line-height: 130%;
+    padding-left: 10px;
+}
+
+.own_menu_button_2{
+    background-color: transparent;
+    color: white;
+    font-family: 'Niconne', cursive;
+    line-height: 130%;
+    padding-left: 10px;
+    font-size: 2em;
+}
+
+.own_title,
+.own_logo{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+
+.own_panel > h2 > a,
+.own_panel > h2{
+	text-align: center;
+    color: black;
+}
+
+
+.social_icon{
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 20px;
+}
+
+/****** EKRANY ******/
+
+/* xs */
+@media (max-width: 767px){
+
+    .own_panel > h2{
+        font-size: 1.5em;
+    }
+
+    .media_nomobile{
+        display: none;
+    }
+
+    .own_title{
+        color: #ab3b93;
+        font-size: 1.7em;
+    }
+    button.btn.own_menu_button{
+        margin-left: 10px;
+        font-size: 1.2em;
+        line-height: 120%;
+    }
+
+}
+
+/* sm */
+@media (min-width:768px){
+
+    body{
+        background-image: url('tlo.jpg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .media_mobile{
+        display: none;
+    }
+
+    .own_title{
+        font-size: 4.5em;
+    }
+    .own_menu_button{
+        font-size: 2em;
+        line-height: 140%;
+    }
+
+}
+
+
+
+/***** LINKI ********/
+
+a,
+a:hover,
+a:visited,
+.own_panel > h2 > a,
+.own_panel > h2 > a:hover,
+table a,
+table a:hover{
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.own_menu_button > a,
+.own_menu_button > a:hover{
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+
+.own_panel > h2 > a:hover{
+
+
+}
+
+a.btn.btn-lg.own_button{
+    background-color: #ab3b93;
+    border-radius: 0;
+    color: white;
+}

@@ -1,23 +1,24 @@
-%p
-  Zawodniczki
+- if coach_signed_in?
+  %h2
+    Zawodniczki
 
-%p
-  .table-responsive
-    %table.table
-      %thead
-        %tr
-          %th Imię
-          %th Nazwisko
-          %th Rok urodzenia
-          %th Email
-      %tbody
-      - @players.order(:age).each do |player|
-        %tr
-          %td= player.fname
-          %td= player.lname
-          %td= player.age
-          %td= player.email
+  %p
+    .table-responsive
+      %table.table
+        %thead
+          %tr
+            %th Imię
+            %th Nazwisko
+            %th Rok urodzenia
+            %th Email
+        %tbody
+        - @players.order(:age).each do |player|
+          %tr
+            %td= player.fname
+            %td= player.lname
+            %td= player.age
+            %td= player.email
 
-%br
+  %br
 
-= link_to 'New Player', new_player_path
+  = link_to 'New Player', new_player_path

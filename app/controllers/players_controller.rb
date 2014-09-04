@@ -60,6 +60,6 @@ class PlayersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
-      params.require(:player).permit(:fname, :lname, :email, :age, :team_id, :pitch_ids => [])
+      params.require(:player).permit(:fname, :lname, :email, :age, :times, :team_id, :pitch_ids => [])
     end
 end

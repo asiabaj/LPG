@@ -18,10 +18,6 @@ ActiveRecord::Schema.define(version: 20140827190640) do
 
   create_table "coaches", force: true do |t|
     t.string   "name"
-    t.string   "d_study"
-    t.string   "d_me"
-    t.string   "d_sport"
-    t.string   "d_passion"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email",                  default: "", null: false
@@ -57,6 +53,7 @@ ActiveRecord::Schema.define(version: 20140827190640) do
     t.string   "email"
     t.integer  "age"
     t.integer  "team_id"
+    t.integer  "times"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

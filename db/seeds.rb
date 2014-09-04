@@ -7,24 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Coach.create(name: 'Asia Baj',
-             d_study: 'def',
-             d_me: 'def',
-             d_sport: 'def',
-             d_passion: 'def',
              password: 'qwerty123',
              email: 'coach1@lpgdansk.pl')
+
 Coach.create(name: 'Natalia Machul',
-             d_study: 'def',
-             d_me: 'def',
-             d_sport: 'def',
-             d_passion: 'def',
              password: 'qwerty123',
              email: 'coach2@lpgdansk.pl')
 
-Team.create(name: 'Fregata 1',
-            coach_id: 1,
-            age: '6 - 7 lat',
-            district: 'Oliwa')
 Team.create(name: 'Fregata 3',
             coach_id: 1,
             age: '8 - 10 lat',
@@ -83,17 +72,8 @@ Pitch.create(address: 'ul. Meissnera 9',           ptype: 'szkolne')
 Pitch.create(address: 'ul. Smoleńska 6/8',         ptype: 'szkolne')
 Pitch.create(address: 'ul. Grunwaldzka 238',       ptype: 'szkolne')
 
-Training.create(day: 'wtorek',
+Training.create(day: 'piątek',
                 duration: '14:15 - 16:15',
                 team_id: 1,
-                pitch_id: 1)
-Training.create(day: 'wtorek',
-                duration: '14:15 - 16:15',
-                team_id: 2,
-                pitch_id: 1)
-
-Player.create(fname: 'Asia',
-              lname: 'Baj',
-              age: 1994,
-              email: 'baj.asia@gmail.com')
+                pitch_id: 41)
 

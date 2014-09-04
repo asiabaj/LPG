@@ -5,7 +5,9 @@
       Szkółka Piłkarksa Ladies Power Gdańsk
       = yield(:title) 
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    /= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'custom'
+    = stylesheet_link_tag 'bootstrap'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     %link{href: "//fonts.googleapis.com/css?family=Niconne&subset=latin-ext", rel: 'stylesheet' }
     %link{href: "//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", rel: "stylesheet"}
@@ -15,25 +17,26 @@
     = csrf_meta_tags
   %body
     .container
-      .row.own_navbar
+      .row
         =render 'layouts/partials/navbar'
       .row
-        .col-xs-12.col-sm-12.col-lg-10
-          .col-xs-12.col-sm-2.own_content
-            = render 'layouts/partials/media'
-          .col-xs-12.col-sm-10.own_margin
-            .own_content
-              .jumbotron
-                = yield
-          .col-xs-12.social_media
-            %b Znajdź nas na:
-            %a.btn.btn-social-icon.btn-facebook{href: 'https://www.facebook.com/joanna.baj.50'}
-              %i.fa.fa-facebook
-
-            %a.btn.btn-social-icon.btn-google-plus{href: '//plus.google.com/u/0/112752904583828305042'}
-              %i.fa.fa-google-plus
-
+        =render 'layouts/partials/media'
+      .row
+        .col-xs-12
+          .own_panel
+            =yield
     %p.notice
       =notice
     %p.alert
       =alert
+
+    /.row.own_navbar
+    /  =render 'layouts/partials/navbar'
+    /.row
+    /  .col-xs-12.col-sm-12.col-lg-10
+    /    .col-xs-12.col-sm-2.own_content
+    /      = render 'layouts/partials/media'
+    /    .col-xs-12.col-sm-10.own_margin
+    /      .own_content
+    /        .jumbotron
+    /          = yield

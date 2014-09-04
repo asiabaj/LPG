@@ -1,7 +1,8 @@
-%h1 Editing player
+- if coach_signed_in?
+  %h1 Editing player
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @player
-\|
-= link_to 'Back', players_path
+  = link_to 'Show', @player
+  \|
+  = link_to 'Back', players_path

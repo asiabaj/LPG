@@ -1,24 +1,25 @@
-%p#notice= notice
+- if coach_signed_in?
+  %p#notice= notice
 
-%p
-  %b Name:
-  = @player.fname
-%p
-  %b Name:
-  = @player.lname
-%p
-  %b Age:
-  = @player.age
-%p
-  %b Email
-  = @player.email
-%p
-  %b Team:
-  = @player.team_id
+  %p
+    %b Name:
+    = @player.fname
+  %p
+    %b Name:
+    = @player.lname
+  %p
+    %b Age:
+    = @player.age
+  %p
+    %b Email
+    = @player.email
+  %p
+    %b Team:
+    = @player.team_id
 
-%p
-  = @player.pitches.map {|c| c.address}.join(', ')
+  %p
+    = @player.pitches.map {|c| c.address}.join(', ')
 
-= link_to 'Edit', edit_player_path(@player)
-\|
-= link_to 'Back', players_path
+  = link_to 'Edit', edit_player_path(@player)
+  \|
+  = link_to 'Back', players_path

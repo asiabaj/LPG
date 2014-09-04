@@ -4,20 +4,24 @@
   = @coach.name
 %p
   %b Studia:
-  %p
-    = @coach.d_study
+  %p.own
+    -if @coach.name == "Asia Baj"
+      Od dwóch lat studiuję Informatykę na Politechnice Gdańskiej. Jest trudno, ale ja lubię wyzwania :) Jeśli miałabym pracować w branży IT to chciałabym projektować aplikacje internetowe a w wolnych chwilach działać na rzecz "ulepszenia" internetu.
 %p
   %b Na codzień:
-  %p
-    = @coach.d_me
+  %p.own
+    -if @coach.name == "Asia Baj"
+      Czasem się zastanawiam gdzie zostawiam więcej serca: na boisku czy w Bieszczadach. Wybieram rower zamiast autobusu i pociąg zamiast samochodu. Nie lubię jeść na mieście - mam ulubione pudełko na lunch i zawsze przygotowuję sobie jedzenie w domu. Staram się w życiu kierować chrześcijańskimi wartościami i nie szufladkować ludzi pod żadnym względem.
 %p
   %b Sport:
-  %p
-    = @coach.d_sport
+  %p.own
+    -if @coach.name == "Asia Baj"
+      Przygodę z piłką zaczynałam jako kilkuletnia dziewczynka na podwórku. W podstawówce i gimnazjum grałam w dziewczęcym klubie w Lechii Gdańsk i kadrze woj. pomorskiego. Kontuzja kolan zmusiła mnie do przerwania "kariery" na kilka lat. Dopiero na studiach wróciłam do uprawiania sportu - należę do żeńskiej drużyny futsalowej. Od roku trenuję dziewczęcy zespół przy Fregacie w Oliwie.
 %p
   %b Pasja:
-  %p
-    = @coach.d_passion
+  %p.own
+    -if @coach.name == "Asia Baj"
+      We wrześniu minie 9 lat odkąd jestem harcerką. Z jednej strony to około 300 sobót rozpoczynających się o 8 rano, a z drugiej to niezapomniane wspomnienia udanego dzieciństwa, pierwszych poważnych obowiązków i (od kilku lat) świadomej pracy wychowawczej. Od dwóch lat jestem instruktorką Związku Harcerstwa Rzeczpospolitej i prowadzę gromadę zuchenek "Królestwo Konwalii". To fantastyczna sprawa, kiedy możesz kształtować i obserwować proces, w którym dzieci uczą się, rozwijają swoje mocne strony i pracują nad tymi słabymi.
 
 
 - if coach_signed_in?

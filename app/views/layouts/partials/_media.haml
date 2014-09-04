@@ -1,41 +1,81 @@
-.media_nomobile
-  %a{href: '/'}
-    =image_tag 'logo_lpg.png', width: '100%'
-  .own_menu_button
-    =link_to 'trenerki', '/coaches'
-  .own_menu_button
-    =link_to 'treningi', '/trainings'
-  .own_menu_button
-    =link_to 'idea', '/idea'
-  .own_menu_button
-    =link_to 'zespoły', '/teams'
-  .own_menu_button
-    =link_to 'kontakt', '/contact'
+.col-xs-12
+  .media_nomobile
+    .own_navbar
+      .col-sm-2.own_menu_button
+        =link_to 'trenerki', '/coaches'
+      .col-sm-2.own_menu_button
+        =link_to 'treningi', '/trainings'
+      .col-sm-2.own_menu_button
+        =link_to 'idea', '/idea'
+      .col-sm-2.own_menu_button
+        =link_to 'zespoły', '/teams'
+      .col-sm-2.own_menu_button
+        =link_to 'kontakt', '/contact'
+      .col-sm-1.own_menu_button
+        %a.social_icon.btn-facebook{href: 'https://www.facebook.com/lpgdansk'}
+          %i.fa.fa-facebook
+      .col-sm-1.own_menu_button
+        %a.social_icon.btn-google-plus{href: '//plus.google.com/u/0/112752904583828305042'}
+          %i.fa.fa-google-plus
 
+  .media_mobile
+    .col-xs-3
+      %button.btn.own_menu_button{"data-target" => "#demo", "data-toggle" => "collapse", :type => "button"}
+        Menu
+    .col-xs-1
 
-  %br
-  %b Znajdź nas na:
-  %a.btn.btn-social-icon.btn-facebook{href: 'https://www.facebook.com/joanna.baj.50'}
-    %i.fa.fa-facebook
-
-  %a.btn.btn-social-icon.btn-google-plus{href: '//plus.google.com/u/0/112752904583828305042'}
-    %i.fa.fa-google-plus
-
-
-.media_mobile
-  .own_menu_button{type: 'button', 'data-toggle' => 'collapse', 'data-target' => '#demo'}
-    Menu
-  #demo.collapse.out.own_menu_button
-    .col-xs-6
+    .col-xs-7.text-center
+      #demo.collapse.out.own_menu_button_2
+        .col-xs-12.own_menu_button
+          =link_to 'trenerki', '/coaches'
+        .col-xs-12.own_menu_button
+          =link_to 'treningi', '/trainings'
+        .col-xs-12.own_menu_button
+          =link_to 'idea', '/idea'
+        .col-xs-12.own_menu_button
+          =link_to 'zespoły', '/teams'
+        .col-xs-12.own_menu_button
+          =link_to 'kontakt', '/contact'
+/
+  .media_nomobile
+    %a{href: '/'}
+      =image_tag 'logo_lpg.png', width: '100%'
+    .own_menu_button
       =link_to 'trenerki', '/coaches'
-      %br
+    .own_menu_button
       =link_to 'treningi', '/trainings'
-      %br
-      =link_to 'idea', '#'
-      %br
+    .own_menu_button
+      =link_to 'idea', '/idea'
+    .own_menu_button
       =link_to 'zespoły', '/teams'
-      %br
+    .own_menu_button
       =link_to 'kontakt', '/contact'
-    .col-xs-6
-      %a{href: '/'}
-        =image_tag 'logo_lpg.png'
+
+
+    %br
+    %b Znajdź nas na:
+    %a.btn.btn-social-icon.btn-facebook{href: 'https://www.facebook.com/joanna.baj.50'}
+      %i.fa.fa-facebook
+
+    %a.btn.btn-social-icon.btn-google-plus{href: '//plus.google.com/u/0/112752904583828305042'}
+      %i.fa.fa-google-plus
+
+
+  .media_mobile
+    .own_menu_button{type: 'button', 'data-toggle' => 'collapse', 'data-target' => '#demo'}
+      Menu
+    #demo.collapse.out.own_menu_button
+      .col-xs-6
+        =link_to 'trenerki', '/coaches'
+        %br
+        =link_to 'treningi', '/trainings'
+        %br
+        =link_to 'idea', '#'
+        %br
+        =link_to 'zespoły', '/teams'
+        %br
+        =link_to 'kontakt', '/contact'
+      .col-xs-6
+        %a{href: '/'}
+          =image_tag 'logo_lpg.png'
+

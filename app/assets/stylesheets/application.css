@@ -116,13 +116,6 @@ tr > td > a:hover{
     max-width: 150px;
 }
 
-.social_media{
-    background-color: #7e71b1;
-    color: #fff;
-    text-align: center;
-    margin-top: -7%;
-    padding: 3%;
-}
 td,
 th {
     color: #fff;
@@ -177,7 +170,6 @@ ul.own > li{
         font-size: 2em;
         line-height: 140%;
     }
-    .social_media,
     .media_mobile{
         display: none;
     }
