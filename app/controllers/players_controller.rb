@@ -10,11 +10,11 @@ class PlayersController < ApplicationController
 
   def new
     @player = Player.new
-    @pitches = Pitch.all
+    @districts = District.all
   end
 
   def edit
-    @pitches = Pitch.all
+    @districts = District.all
   end
 
   def create
@@ -32,7 +32,7 @@ class PlayersController < ApplicationController
   end
 
   def update
-    params[:player][:pitch_ids] ||= []
+    params[:player][:district_ids] ||= []
     respond_to do |format|
       if @player.update(player_params)
         format.html { redirect_to @player, notice: 'Player was successfully updated.' }
@@ -60,6 +60,6 @@ class PlayersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
-      params.require(:player).permit(:fname, :lname, :email, :age, :times, :team_id, :pitch_ids => [])
+      params.require(:player).permit(:fname, :lname, :email, :age, :times, :team_id, :district_ids => [])
     end
 end

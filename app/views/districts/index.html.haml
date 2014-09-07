@@ -1,0 +1,17 @@
+- if coach_signed_in?
+  %h1 Listing districts
+
+  %table.table-responsive
+    %tr
+      %th Dzielnica
+      %th
+
+    - @districts.each do |district|
+      %tr
+        %td= link_to "#{district.name}", district
+        %td= district.players.map {|k| k.email}.join(', ')
+        %td= link_to 'Destroy', district, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  %br
+
+  = link_to 'New Pitch', new_district_path

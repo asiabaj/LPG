@@ -11,6 +11,8 @@
             %th Nazwisko
             %th Rok urodzenia
             %th Email
+            %th Częstość
+
         %tbody
         - @players.order(:age).each do |player|
           %tr
@@ -18,6 +20,7 @@
             %td= player.lname
             %td= player.age
             %td= player.email
+            %td= player.times
 
   %br
 

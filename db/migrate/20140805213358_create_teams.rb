@@ -4,11 +4,12 @@ class CreateTeams < ActiveRecord::Migration
       t.string :name
       t.integer :coach_id
       t.string :age
-      t.string :district
+      t.string :district_id
 
       t.timestamps
 
       t.belongs_to :coach
+      t.belongs_to :district
 
     end
   end

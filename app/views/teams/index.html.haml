@@ -1,22 +1,21 @@
 %h2 Zespoły
 
-/
-  .table-responsive
-    %table.table
-      %thead
-        %tr
-          %th Nazwa zespołu
-          %th Miejsce treningów
-          %th Wiek zawodniczek
-          %th Trener
-      %tbody
-      - @teams.each do |team|
-        %tr
-          %td= link_to "#{team.name}", team
-          %td= team.district
-          %td= team.age
-          %td= link_to "#{team.coach.name}", "/coaches/#{team.coach.id}"
+.table-responsive
+  %table.table
+    %thead
+      %tr
+        %th Nazwa zespołu
+        %th Miejsce treningów
+        %th Wiek zawodniczek
+        %th Trener
+    %tbody
+    - @teams.each do |team|
+      %tr
+        %td= link_to "#{team.name}", team
+        %td= team.district.name
+        %td= team.age
+        %td= link_to "#{team.coach.name}", "/coaches/#{team.coach.id}"
 
-  .media_mobile
-    %h6
-      przesuń tablelkę palcem, aby zobaczyć całość
+.media_mobile
+  %h6
+    przesuń tablelkę palcem, aby zobaczyć całość

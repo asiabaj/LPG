@@ -1,27 +1,26 @@
 %h2 Treningi
 
 %p
-  Treningi Szkółki ruszą 6 października 2014.Będą się odbywały w godzinach popołudniowych (17 - 18:30) w większość dni
-  w tygodniu w różnych miejscach. O większości parametrów zadecydują Wasze zgłoszenia, na które czekamy do końca Września.
+  Treningi Szkółki ruszą 6 października 2014.Będą się odbywały w godzinach popołudniowych (1,5h) w miejscach, które wybierzecie w zgłoszeniach.
 
-/
-  .table-responsive
-    %table.table
+
+.table-responsive
+  %table.table
+    %tr
+      %th Dzień
+      %th Czas trwania
+      %th Zespół
+      %th Miejsce
+    - @trainings.each do |training|
       %tr
-        %th Dzień
-        %th Czas trwania
-        %th Zespół
-        %th Miejsce
-      - @trainings.each do |training|
-        %tr
-          %td= training.team.name
-          %td= training.day
-          %td= training.duration
-          %td= "#{training.team.district}, #{training.pitch.address}"
-          -if coach_signed_in?
-            %td= link_to 'Edit', edit_training_path(training)
-            %td= link_to 'Destroy', training, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= training.team.name
+        %td= training.day
+        %td= training.duration
+        %td= "#{training.address}, #{training.team.district.name}"
+        -if coach_signed_in?
+          %td= link_to 'Edit', edit_training_path(training)
+          %td= link_to 'Destroy', training, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-  .media_mobile
-    %h6
-      przesuń tablelkę palcem, aby zobaczyć całość
+.media_mobile
+  %h6
+    przesuń tablelkę palcem, aby zobaczyć całość

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :applications
 
-  resources :pitches
+  resources :districts
 
   resources :trainings
 

@@ -13,7 +13,7 @@
         Zgłoszenie
 
   = f.hidden_field :team_id, value: nil
-  = f.hidden_field "player[pitch_ids][]", value: nil
+  = f.hidden_field "player[district_ids][]", value: nil
 
   .form-group
     = f.label 'Imię: ', class: 'col-sm-3 control-label'
@@ -33,33 +33,28 @@
       = f.number_field :age, class: 'form-control', value: 2000
   .form-group
     .help-block.own
-      Aby powstał zespół musi zebrać się 15 dziewcząt w zbliżonym wieku oraz
-      właściciel obiektu (zazwyczaj szkoła) musi wyrazić zgodę na treningi.
-      Wobec tego najlepiej zaznaczyć boisko przy swojej szkole i wszystkie inne,
-      do których masz wygodny dojazd. Ta
-      = link_to 'mapa', 'https://mapsengine.google.com/map/edit?mid=zA3SOfG4HEgE.kfM4uK681IgQ'
-      pomoże Ci zdecydować, które boiska wybrać.
-  .col-sm-4
-    - for pitch in @pitches
-      - if pitch.ptype == 'orlik'
-        .text-left.checkbox
-          = check_box_tag "player[pitch_ids][]", pitch.id, @player.pitches.include?(pitch), class: 'checkbox-inline'
-          = pitch.ptype + ' - ' + pitch.address
-  .col-sm-4
-    - for pitch in @pitches
-      - if pitch.ptype == 'junior'
-        .text-left.checkbox
-          = check_box_tag "player[pitch_ids][]", pitch.id, @player.pitches.include?(pitch), class: 'checkbox-inline'
-          = pitch.ptype + ' - ' + pitch.address
-  .col-sm-4
-    - for pitch in @pitches
-      - if pitch.ptype == 'szkolne'
-        .text-left.checkbox
-          = check_box_tag "player[pitch_ids][]", pitch.id, @player.pitches.include?(pitch), class: 'checkbox-inline'
-          = pitch.ptype + ' - ' + pitch.address
+      Wybierz miasto/dzielnice, w której mieszkasz lub do której mogłabyś dojeżdżać na treningi. Im więcej zaznaczysz, tym większa szansa, że powstanie tam zespół.
+    .col-sm-3.control-label
+      %strong
+        Pruszcz Gdański:
+    .col-sm-8
+      - for district in @districts
+        -if district.name == "Pruszcz Gdański"
+          .text-left.checkbox
+            = check_box_tag "player[district_ids][]", district.id, @player.districts.include?(district), class: 'checkbox-inline'
+            = district.name
+    .col-sm-3.control-label
+      %strong
+        Gdańsk:
+    .col-sm-8
+      - for district in @districts
+        - if district.name != "Pruszcz Gdański"
+          .text-left.checkbox
+            = check_box_tag "player[district_ids][]", district.id, @player.districts.include?(district), class: 'checkbox-inline'
+            = district.name
   .form-group
     = f.label 'Ile razy w tygodniu mogłabyś trenować?', class: 'col-sm-3 control-label'
-    .col-sm-8
+    .col-sm-8.text-left
       = f.label :times, "1", value: 1
       = f.radio_button :times, 1
       = f.label :times, "2", value: 2
@@ -67,4 +62,4 @@
 
   .form-group
     .col-sm-offset-2.col-sm-8
-      = f.submit 'Wyślij zgłoszenie! ', class: 'btn'
+      = f.submit 'Wyślij zgłoszenie! ', class: 'btn own_button'

@@ -47,11 +47,19 @@ body{
     color: black;
 }
 
+.own_button{
+    background-color: #ab3b93;
+    color: #fff;
+}
 
 .social_icon{
     padding-left: 15px;
     padding-right: 15px;
     font-size: 20px;
+}
+
+.help-block.own{
+    padding-bottom: 10px;
 }
 
 /****** EKRANY ******/
