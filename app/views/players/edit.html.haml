@@ -1,7 +1,74 @@
 - if coach_signed_in?
   %h1 Editing player
 
-  = render 'form'
+= form_for @player, html: {class: 'form-horizontal'} do |f|
+  - if @player.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@player.errors.count, 'error')} prohibited this player from being saved:"
+      %ul
+        - @player.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    .col-sm-2
+    .col-sm-8
+      %h2
+        Edytuj
+
+  = f.hidden_field "player[district_ids][]", value: nil
+  .form-group
+    = f.label 'Zespół: ', class: 'col-sm-3 control-label'
+    .col-sm-8
+      = f.number_field :team_id, class: 'form-control'
+  .form-group
+    = f.label 'Imię: ', class: 'col-sm-3 control-label'
+    .col-sm-8
+      = f.text_field :fname, class: 'form-control'
+  .form-group
+    = f.label 'Nazwisko: ', class: 'col-sm-3 control-label'
+    .col-sm-8
+      = f.text_field :lname, class: 'form-control'
+  .form-group
+    = f.label 'Email: ', class: 'col-sm-3 control-label'
+    .col-sm-8
+      = f.email_field :email, class: 'form-control'
+  .form-group
+    = f.label 'Rok urodzenia: ', class: 'col-sm-3 control-label'
+    .col-sm-8
+      = f.number_field :age, class: 'form-control', value: 2000
+  .form-group
+    .help-block.own
+      Wybierz miasto/dzielnice, w której mieszkasz lub do której mogłabyś dojeżdżać na treningi. Im więcej zaznaczysz, tym większa szansa, że powstanie tam zespół.
+    .col-sm-3.control-label
+      %strong
+        Pruszcz Gdański:
+    .col-sm-8
+      - for district in @districts
+        -if district.name == "Pruszcz Gdański"
+          .text-left.checkbox
+            = check_box_tag "player[district_ids][]", district.id, @player.districts.include?(district), class: 'checkbox-inline'
+            = district.name
+    .col-sm-3.control-label
+      %strong
+        Gdańsk:
+    .col-sm-8
+      - for district in @districts
+        - if district.name != "Pruszcz Gdański"
+          .text-left.checkbox
+            = check_box_tag "player[district_ids][]", district.id, @player.districts.include?(district), class: 'checkbox-inline'
+            = district.name
+  .form-group
+    = f.label 'Ile razy w tygodniu mogłabyś trenować?', class: 'col-sm-3 control-label'
+    .col-sm-8.text-left
+      = f.label :times, "1", value: 1
+      = f.radio_button :times, 1
+      = f.label :times, "2", value: 2
+      = f.radio_button :times, 2
+
+  .form-group
+    .col-sm-offset-2.col-sm-8
+      = f.submit 'Wyślij zgłoszenie! ', class: 'btn own_button'
+
 
   = link_to 'Show', @player
   \|
